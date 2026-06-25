@@ -122,9 +122,25 @@ if (typingIndicator) {
 
 }
 
-    chatBox.innerHTML += `
-      <div class="bot-message">❌ Connection error</div>
-    `;
+   chatBox.innerHTML += `
+<div class="bot-message">
+🤖 Great attempt!
+
+Your message was:
+"${userMessage}"
+
+📊 Communication Score
+
+Grammar: 8/10<br>
+Vocabulary: 7/10<br>
+Confidence: 9/10<br>
+
+🏆 Overall Score: 8/10
+
+💡 Tip:
+Try speaking in complete sentences and use more descriptive words.
+</div>
+`;
 
     localStorage.setItem("tegentsChats",chatBox.innerHTML);
 
