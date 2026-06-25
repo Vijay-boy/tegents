@@ -1,0 +1,220 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+}
+
+.container{
+  display:flex;
+  height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+  width:250px;
+  background:#1f2937;
+  color:white;
+  padding:20px;
+}
+
+.sidebar h2{
+  margin-bottom:20px;
+}
+
+.sidebar button{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Main */
+
+.main{
+  flex:1;
+  padding:30px;
+}
+
+.main h1{
+  margin-bottom:10px;
+}
+
+.main p{
+  margin-bottom:20px;
+}
+
+/* Challenge Card */
+
+.challenge-card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.challenge-card h3{
+  margin-bottom:10px;
+}
+
+/* Chat Box */
+
+#chatBox{
+  height:400px;
+  background:white;
+  border-radius:10px;
+  padding:20px;
+  margin-bottom:20px;
+
+  overflow-y:auto;
+
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+/* Messages */
+
+.user-message{
+  background:#2563eb;
+  color:white;
+  padding:12px;
+  border-radius:12px;
+  max-width:70%;
+  align-self:flex-end;
+  word-wrap:break-word;
+}
+
+.bot-message{
+  background:#f1f5f9;
+  padding:12px;
+  border-radius:12px;
+  max-width:70%;
+  align-self:flex-start;
+  word-wrap:break-word;
+}
+
+/* Input */
+
+.inputArea{
+  display:flex;
+  gap:10px;
+}
+
+#message{
+  flex:1;
+  padding:12px;
+}
+
+#sendBtn,
+#clearBtn{
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Profile */
+
+.profile{
+  margin-top:30px;
+  padding:15px;
+  background:#374151;
+  border-radius:10px;
+  color:white;
+}
+
+.profile h3{
+  margin-bottom:5px;
+}
+
+/* Progress */
+
+.progress-box{
+  margin-top:20px;
+  padding:15px;
+  background:#374151;
+  border-radius:10px;
+  color:white;
+}
+
+.progress-box h3{
+  margin-bottom:10px;
+}
+
+
+
+.time{
+  font-size:12px;
+  opacity:0.6;
+  margin-left:10px;
+}
+
+/* Dark Mode */
+
+.dark-mode{
+background:#111827;
+color:white;
+}
+
+.dark-mode .container{
+background:#111827;
+}
+
+.dark-mode .main{
+background:#111827;
+color:white;
+}
+
+.dark-mode .sidebar{
+background:#0f172a;
+}
+
+.dark-mode .challenge-card{
+background:#1f2937;
+color:white;
+}
+
+.dark-mode #chatBox{
+background:#111827;
+}
+
+.dark-mode .bot-message{
+background:#374151;
+color:white;
+}
+
+.dark-mode .user-message{
+background:#2563eb;
+color:white;
+}
+
+.dark-mode #message{
+background:#1f2937;
+color:white;
+border:1px solid #374151;
+}
+
+.dark-mode #sendBtn,
+.dark-mode #clearBtn,
+.dark-mode #micBtn,
+.dark-mode #themeBtn{
+background:#374151;
+color:white;
+}
+
+.dark-mode .profile{
+background:#1f2937;
+}
+
+.dark-mode .progress-box{
+background:#1f2937;
+}
