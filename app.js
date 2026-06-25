@@ -129,13 +129,6 @@ if (typingIndicator) {
 Your message was:
 "${userMessage}"
 
-📊 Communication Score
-
-Grammar: 8/10<br>
-Vocabulary: 7/10<br>
-Confidence: 9/10<br>
-
-🏆 Overall Score: 8/10
 
 💡 Tip:
 Try speaking in complete sentences and use more descriptive words.
