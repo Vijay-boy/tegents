@@ -69,77 +69,97 @@ class="bot-message">
 chatBox.scrollTop =
 chatBox.scrollHeight;
 
-  try {
-
-    const response = await fetch("/chat", {
-
-      method: "POST",
-
-      headers: {
-        "Content-Type": "application/json"
-      },
-
-      body: JSON.stringify({
-        message: userMessage
-      })
-
-    });
-
-    const data = await response.json();
-
-    const typingIndicator =
-document.getElementById(
-"typingIndicator"
-);
+  const typingIndicator = document.getElementById("typingIndicator");
 
 if (typingIndicator) {
+    typingIndicator.remove();
+}
 
-  typingIndicator.remove();
+let reply = "";
+
+const text = userMessage.toLowerCase();
+
+if (text.includes("i am go") && text.includes("yesterday")) {
+
+    reply = `
+❌ Grammar Mistake Found<br><br>
+
+✅ Correct Sentence:<br>
+I went to school yesterday.<br><br>
+
+📝 Explanation:<br>
+Because "yesterday" is in the past, use <b>went</b> instead of <b>go</b>.<br><br>
+
+📊 Communication Score<br>
+Grammar: 6/10<br>
+Vocabulary: 8/10<br>
+Confidence: 8/10
+`;
+
+}
+else if (text.includes("he don't")) {
+
+    reply = `
+❌ Grammar Mistake Found<br><br>
+
+✅ Correct Sentence:<br>
+He doesn't like it.<br><br>
+
+📝 Explanation:<br>
+Use <b>doesn't</b> with <b>he/she/it</b>.
+`;
+
+}
+else if (text.includes("vocabulary")) {
+
+    reply = `
+📚 Word of the Day<br><br>
+
+Word: Confident<br><br>
+
+Meaning:<br>
+Believing in yourself.<br><br>
+
+Example:<br>
+I am confident in interviews.
+`;
+
+}
+else if (text.includes("interview")) {
+
+    reply = `
+🎯 Interview Question<br><br>
+
+Tell me about yourself.
+`;
+
+}
+else {
+
+    reply = `
+💬 I'm currently an English Communication Coach.
+
+I can help with:
+✅ Grammar
+✅ Vocabulary
+✅ Interview Preparation
+✅ Spoken English
+
+Please ask me an English learning question.
+`;
 
 }
 
-    chatBox.innerHTML += `<div class="bot-message">🤖 ${data.reply}<span class="time">${getTime()}</span></div>`;
-
-    chatBox.scrollTop=chatBox.scrollHeight;
-
-    localStorage.setItem(
-"tegentsChats",
-chatBox.innerHTML
-);
-
-    chatBox.scrollTop = chatBox.scrollHeight;
-
-  } catch (error) {
-
-    const typingIndicator =
-document.getElementById(
-"typingIndicator"
-);
-
-if (typingIndicator) {
-
-  typingIndicator.remove();
-
-}
-
-   chatBox.innerHTML += `
+chatBox.innerHTML += `
 <div class="bot-message">
-🤖 Great attempt!
-
-Your message was:
-"${userMessage}"
-
-
-💡 Tip:
-Try speaking in complete sentences and use more descriptive words.
+🤖 ${reply}
+<span class="time">${getTime()}</span>
 </div>
 `;
 
-    localStorage.setItem("tegentsChats",chatBox.innerHTML);
+localStorage.setItem("tegentsChats", chatBox.innerHTML);
 
-    console.log(error);
-
-  }
+chatBox.scrollTop = chatBox.scrollHeight;
 
 }
 
