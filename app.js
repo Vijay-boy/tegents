@@ -69,7 +69,9 @@ class="bot-message">
 chatBox.scrollTop =
 chatBox.scrollHeight;
 
-  const typingIndicator = document.getElementById("typingIndicator");
+  
+
+    const typingIndicator = document.getElementById("typingIndicator");
 
 if (typingIndicator) {
     typingIndicator.remove();
@@ -160,7 +162,6 @@ chatBox.innerHTML += `
 localStorage.setItem("tegentsChats", chatBox.innerHTML);
 
 chatBox.scrollTop = chatBox.scrollHeight;
-
 }
 
 sendBtn.addEventListener(
